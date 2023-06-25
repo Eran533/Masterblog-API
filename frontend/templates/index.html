@@ -9,21 +9,38 @@
 </head>
 <body>
     <div class="container">
+        <h2>Welcome back, {{ username }}</h2>
         <h1>📚 Blog Posts</h1>
         <div class="input-field">
             <input type="text" id="api-base-url" placeholder="Enter API Base URL" value="http://127.0.0.1:5002/api">
             <button onclick="loadPosts()">Load Posts</button>
         </div>
         <div class="input-field">
+            <input type="text" id="post-author" placeholder="Enter Post Author">
             <input type="text" id="post-title" placeholder="Enter Post Title">
             <input type="text" id="post-content" placeholder="Enter Post Content">
             <button onclick="addPost()">Add Post</button>
         </div>
+         <div class="input-field">
+             <input type="text" id="search_author" placeholder="Enter Post Author">
+            <input type="text" id="search_title" placeholder="Enter Post Title">
+            <input type="text" id="search_content" placeholder="Enter Post Content">
+            <button onclick="searchPosts()">Search post</button>
+        </div>
+        <div class="input-field">
+            <input type="text" id="sort" placeholder="Enter sort">
+            <input type="text" id="direction" placeholder="Enter direction">
+            <button onclick="sortPosts()">Sort posts</button>
+        </div>
         <div id="post-container">
             <!-- Blog posts will be inserted here by JavaScript -->
         </div>
+        <div class="page-buttons">
+            <button id="previous-page" onclick="previousPage()" style="display: none;">Previous Page</button>
+            <button id="next-page" onclick="nextPage()">Next Page</button>
+        </div>
+        <strong id="current-page">1</strong>
     </div>
-
     <script src="static/main.js"></script>
 </body>
 </html>
